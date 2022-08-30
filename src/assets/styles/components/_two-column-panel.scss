@@ -1,0 +1,118 @@
+.twoColumnPanel{
+    //Container dimensions
+    width: 80%;
+    margin: auto;
+
+    @media (max-width: map-get($grid-breakpoints, "xl")){
+        width: 100%;
+    }
+
+    //Grid CSS styles
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+
+    @media (max-width: map-get($grid-breakpoints, "md")){
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .panel{
+        width: 100%;
+        position: relative;
+        display: flex;
+        color: white;
+        font-size: 1.2em;
+
+        //Adjust font side based on the grid breakpoints
+        @media (max-width: map-get($grid-breakpoints, "xl")){
+            font-size: 1em;
+        }
+
+        @media (max-width: map-get($grid-breakpoints, "lg")){
+            font-size: 0.7em;
+        }
+
+        @media (max-width: map-get($grid-breakpoints, "md")){
+            font-size: 1em;
+        }
+
+        //Apply CSS style to every panel 
+        &:nth-child(1){
+            flex-direction: row-reverse;
+            background-color: $background-color1;
+            order: 1;
+
+            @media (max-width: map-get($grid-breakpoints, "md")){
+                order: 2;
+            }
+        }
+
+        &:nth-child(2){
+            color: $textColorTitlesMobile;
+            order: 2;
+            align-items: center;
+            justify-content: center;
+            
+            @media (max-width: map-get($grid-breakpoints, "md")){
+                order: 1;
+            }
+
+            .sectionTitleText{
+                width: 80%;
+                font-size: 4em;
+                font-weight: bold;
+                text-align: center;
+                padding: 20px;
+                        
+                @media (max-width: map-get($grid-breakpoints, "md")){
+                    font-size: 3em;
+                    width: 100%;
+                }
+            }
+        }
+
+        &:nth-child(3){
+            flex-direction: row;
+            background-color: $background-color2;
+            order: 3;
+        }
+
+        &:nth-child(4){
+            flex-direction: row;
+            background-color: $background-color3;
+            order: 4;
+
+            @media (max-width: map-get($grid-breakpoints, "md")){
+                flex-direction: row-reverse;
+
+                & > img{ //Select the image of this panel
+                    transform: scaleX(-1); //Mirror the image
+                }
+            }
+        }
+    }
+
+    //Panel's childs CSS styles
+    .panel img{
+        width: 50%;
+        display: block;
+    }
+
+    .panelDescriptionText{
+        width: 50%;
+        padding: 20px;
+        margin: auto;
+        z-index: 1; //Show text over the arrow
+    }
+
+    // CSS Style for the arrow inside the panels
+    .arrow{
+        position: absolute;   
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+        width: 50px;
+        height: 50px;
+        background-color: inherit;
+    }
+}

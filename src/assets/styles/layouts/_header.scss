@@ -1,0 +1,125 @@
+header{
+    background-color: black;
+    color: white;
+    font-size: 1em;
+
+    @media (max-width: map-get($grid-breakpoints, "lg")){
+        display: none;
+    }
+
+    .headerContainer{
+        @media (min-width: map-get($grid-breakpoints, "lg")){
+            width: 80%;
+            margin: auto;
+            display: flex;
+            flex-direction: row;
+            position: relative;
+        }
+
+        .menuContainer{
+            width: 100%;
+            
+            & > ul {
+                @media (min-width: map-get($grid-breakpoints, "lg")){
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100%;
+                }
+
+                & > li{
+                    padding: 0 10px;
+                }
+            }
+        }
+
+        .logo{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 5px;
+            width: 100%;
+            max-width: 200px;
+            min-height: 50px;
+        }
+    }
+}
+
+nav.navbar{
+    @media (min-width: map-get($grid-breakpoints, "lg")){
+        display: none;
+    }
+
+    @media (max-width: map-get($grid-breakpoints, "lg")){
+        display: flex;
+        background-color: black;
+        color: white;
+        text-align: center;
+    }
+
+    .container{
+        position: relative;
+    }
+
+    .logo{
+        position: relative;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+        width: 100%;
+        max-width: 200px;
+        min-height: 50px;
+    }
+
+    .hamburger{
+        width: 50px;
+        height: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        position: absolute;
+        right: 0%;
+
+        .hamburgerPatty{
+            width: 100%;
+            height: 15%;
+            background-color: white;
+            transition: 0.2s linear;
+
+            &.open{
+                transition: 0.2s linear;
+            }
+        }
+    
+        .hamburgerPatty:nth-child(1).open{
+            transform: rotate(45deg) translate(25%, 150%);
+        }
+    
+        .hamburgerPatty:nth-child(2).open{
+            opacity: 0;
+        }
+    
+        .hamburgerPatty:nth-child(3).open{
+            transform: rotate(-45deg) translate(25%, -140%);
+        }
+    }
+
+    li.nav-item{
+        font-size: 32px;
+        font-weight: bold;
+        padding: 25px 0px;
+    }
+
+    #menuHeader{
+        background-color: black;
+        position: absolute;
+        top: 66px;
+        left: 0;
+        width: 100%;
+        z-index: 2;
+    }
+}
+ 

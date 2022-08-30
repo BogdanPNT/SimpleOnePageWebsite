@@ -1,0 +1,108 @@
+.creative{
+    background-color: #f3f3f3;
+    color: $textColorTitlesMobile;
+    padding: 25px 0;
+
+    //Title
+    .creativeTitle{
+        text-align: center;
+        font-size: 3em;
+        font-weight: bold;
+        padding: 25px;
+    }
+
+    //Panels
+    .creativeRecipies{
+        @media (min-width: map-get($grid-breakpoints, "md")){
+            width: 80%;
+            margin: auto;
+            padding: 25px 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+        }
+
+        @media (max-width: map-get($grid-breakpoints, "xl")){
+            width: 100%;
+        }
+
+        .recipe{
+            @media (min-width: map-get($grid-breakpoints, "md")){
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            @media (max-width: map-get($grid-breakpoints, "md")){
+                padding: 10%;
+            }
+
+            & > img{
+                width: 100%;
+            }   
+
+            .recipeTitle{
+                width: 80%;
+                padding: 25px 0;
+                font-size: 2em;
+                text-align: center;
+                margin: auto;
+
+                //Adjust font side based on the grid breakpoints
+                @media (max-width: map-get($grid-breakpoints, "xl")){
+                    font-size: 1.5em;
+                }
+        
+                @media (max-width: map-get($grid-breakpoints, "lg")){
+                    font-size: 1em;
+                }
+        
+                @media (max-width: map-get($grid-breakpoints, "md")){
+                    font-size: 1.5em;
+                }
+            }
+        }
+    }
+
+    //Button
+    .creativeButton{
+        border: 1px solid $textColorTitlesMobile;
+        margin: 50px auto;
+        width: 300px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+
+        &:hover{
+            background-color: black;
+            color: white;
+            cursor: pointer;
+        }
+    }
+
+    //Carousel CSS styles
+    ol.carousel-indicators{
+        display: none;
+        position: static;
+
+        @media (max-width: map-get($grid-breakpoints, md)){
+            display: flex;
+            flex-direction: row;
+        }
+
+        & > li{
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            margin: 0 10px;
+            border: $carouselColor 1px solid;
+
+            &.active{
+                background-color: $carouselColor;
+            }
+        }
+    }
+
+}

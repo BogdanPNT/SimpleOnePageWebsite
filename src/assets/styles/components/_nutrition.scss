@@ -1,0 +1,150 @@
+.nutrition {
+    text-align: center;
+
+    .nutritionTitle{
+        color: $textColorTitlesMobile;
+        padding: 25px;
+
+        & div:nth-child(1){
+            font-size: 1.5em;
+        }
+
+        & div:nth-child(2){
+            font-size: 4em;
+            font-weight: bold;
+
+            @media (max-width: map-get($grid-breakpoints, "md")){
+                font-size: 3em;
+            }
+        }
+    }
+
+    .nutritionMobileMenu{
+        display: none;
+
+        @media (max-width: map-get($grid-breakpoints, "md")){
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5px;
+        }
+
+        & > div{
+            font-size: 2em;
+            font-weight: bold;
+            padding: 10px 0;
+            color: $textColorTitlesMobile;
+            background-color: $buttonBackgroundColorInactive;
+
+            &:hover{
+                cursor: pointer;
+            }
+
+            &.active{
+                background-color: $buttonBackgroundColorActive;
+            }
+        }
+    }
+
+    .nutritionRecipies{
+        width: 80%;
+        margin: auto;
+
+        @media (min-width: map-get($grid-breakpoints, "md")){
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        @media (max-width: map-get($grid-breakpoints, "xl")){
+            width: 100%;
+        }
+
+        .recipeNutrition{
+            display: grid;
+            grid-template-columns: 1fr;
+            padding: 25px;
+            gap: 25px;
+
+            & > img{
+                width: 100%;
+                border-radius: 50%;
+                overflow: hidden;
+                border: 15px solid $nutritionColor;
+
+                @media (max-width: map-get($grid-breakpoints, "md")){
+                    order: 2;
+                }
+            }
+
+            & > div{
+                
+                &:nth-child(2){ //Recipe number
+                    font-size: 4em;
+                    font-weight: bold;
+                    color: $textColorTitlesMobile;
+
+                    @media (max-width: map-get($grid-breakpoints, "lg")){
+                        font-size: 3em;
+                    }
+
+                    @media (max-width: map-get($grid-breakpoints, "md")){
+                        display: none;
+                    }   
+                }
+
+                &:nth-child(3){
+                    font-size: 2em;
+                    font-weight: bold;
+                    color: $nutritionTextColor;
+
+                    @media (max-width: map-get($grid-breakpoints, "xl")){
+                        font-size: 1.5em;
+                    }
+
+                    @media (max-width: map-get($grid-breakpoints, "lg")){
+                        font-size: 1em;
+                    }
+
+                    @media (max-width: map-get($grid-breakpoints, "md")){
+                        order: 1;
+                    }
+                }
+
+                &:nth-child(4){
+                    width: 80%;
+                    margin: auto;
+                    font-size: 1em;
+
+                    @media (max-width: map-get($grid-breakpoints, "md")){
+                        order: 3;
+                    }
+                }
+            }
+            
+            @media (max-width: map-get($grid-breakpoints, "md")){
+                display: none;
+            }
+
+            &.activeNutrition{
+                display: grid;
+            }
+        }
+    }
+
+    .nutritionButton{
+        border: 1px solid $textColorTitlesMobile;
+        margin: 50px auto;
+        width: 300px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+
+        &:hover{
+            background-color: black;
+            color: white;
+            cursor: pointer;
+        }
+    }
+}

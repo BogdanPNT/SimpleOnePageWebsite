@@ -1,0 +1,47 @@
+// Fontawesome 5 config
+$fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
+
+// Glyphicons font path
+$icon-font-path: "../fonts/";
+
+// Theme
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1080px
+);
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1260px
+);
+$theme-colors: (
+  primary: #E42E68,
+  secondary: #4C5151
+);
+$primary: map-get($map: $theme-colors, $key: "primary");
+$secondary: map-get($map: $theme-colors, $key: "secondary");
+
+// Colors
+$text-color: #4C5151;
+$textColorTitlesMobile: #432a21;
+$background-color1: #979490;
+$background-color2: #ad3d3d;
+$background-color3: #11bac5;
+$backgroundColorGrey: #f3f3f3;
+$buttonBackgroundColorInactive: #f3f3f3;
+$buttonBackgroundColorActive: #ffd200;
+$carouselColor: #666666;
+$nutritionColor: #f5f5f5;
+$nutritionTextColor: #bc0115;
+$testimonialsPortret: #787878;
+$testimonialsName: #432a21;
+$testimonialsFunction: #fdb033;
+
+//Font-families
+$roboto: 'Roboto', sans-serif;
+
+$mobile: 576px;
