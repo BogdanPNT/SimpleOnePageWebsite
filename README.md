@@ -10,6 +10,8 @@ This is a simple one page website. It has the following features:
 
 To install this project:
 ```
-git
-
+git clone https://github.com/BogdanPNT/SimpleOnePageWebsite.git SimplePage
+cd SimplePage
+yarn install
+yarn start
 ```
